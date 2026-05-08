@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张禾妍 - 个人简历</title>
+    <style>
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+            html, body {
+                margin: 0 !important;
+                padding: 0 !important;
+                width: 210mm;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                line-height: 1.3 !important;
+            }
+            body {
+                background: white;
+                padding: 0 !important;
+            }
+            .resume-container {
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 6mm 8mm !important;
+                max-width: none !important;
+                width: 100%;
+            }
+            .section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                padding: 4px 12px !important;
+            }
+            .card {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                padding: 6px !important;
+                margin-bottom: 4px !important;
+            }
+            .drag-handle {
+                display: none;
+            }
+            .section::before {
+                display: none;
+            }
+            .header {
+                padding: 12px 18px !important;
+            }
+            .header-left h1 {
+                font-size: 24px !important;
+            }
+            .name {
+                font-size: 24px !important;
+                margin-bottom: 6px !important;
+            }
+            .info-grid {
+                gap: 12px !important;
+            }
+            .info-item {
+                font-size: 10px !important;
+            }
+            .section-title {
+                font-size: 16px !important;
+                margin: 0 0 6px 0 !important;
+                padding-bottom: 4px !important;
+            }
+            .item-title {
+                font-size: 13px !important;
+                margin-bottom: 2px !important;
+            }
+            .item-subtitle {
+                font-size: 11px !important;
+                margin-bottom: 2px !important;
+            }
+            .item-description {
+                font-size: 11px !important;
+                line-height: 1.4 !important;
+            }
+            .self-evaluation {
+                font-size: 11px !important;
+                line-height: 1.4 !important;
+            }
+            .personal-info {
+                font-size: 13px !important;
+                gap: 12px !important;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", sans-serif;
+            background: linear-gradient(135deg, #f0f5ff 0%, #ede9fe 50%, #d8d2fe 100%);
+            min-height: 100vh;
+            padding: 20px 15px;
+        }
+
+        .resume-container {
+            max-width: 960px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 40px rgba(109, 104, 251, 0.15);
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .resume-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2564ebd4, #6365f1dd, #8a5cf6d0, #a955f7b5, #c084fc);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2564ebd3 0%, #6365f1d7 50%, #8a5cf6df 100%);
+            color: white;
+            padding: 20px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 25px;
+            right: 25px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .header-left {
+            flex: 1;
+        }
+
+        .name {
+            font-size: 30px;
+            font-weight: bold;
+            color: rgb(239, 236, 236);
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+        }
+
+        .personal-info {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 15px;
+            color: rgba(240, 236, 236, 0.95);
+        }
+
+        .personal-info-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .personal-info-item svg {
+            width: 14px;
+            height: 14px;
+            fill: rgba(255, 255, 255, 0.9);
+        }
+
+        .header-right {
+            margin-left: 30px;
+        }
+
+        .photo {
+            width: 120px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .section {
+            padding: 8px 20px;
+            border-bottom: 1px solid #ddd6fe;
+            position: relative;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 8px;
+            bottom: 8px;
+            width: 3px;
+            background: linear-gradient(180deg, #2563eb, #6366f1, #c4b5fd);
+            border-radius: 2px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #3b3a8a;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #6366f1;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: #6366f1;
+            border-radius: 50%;
+            border: 3px solid #c4b5fd;
+            box-shadow: 0 0 8px rgba(99, 102, 241, 0.4);
+        }
+
+        .section-title svg {
+            width: 18px;
+            height: 18px;
+            fill: #6366f1;
+        }
+
+        .card {
+            background: linear-gradient(145deg, #ffffff, #f5f3ff);
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 8px;
+            border: 1px solid #ddd6fe;
+            box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px rgba(99, 102, 241, 0.18);
+            transform: translateY(-1px);
+        }
+
+        .card:last-child {
+            margin-bottom: 0;
+        }
+
+        .education-item {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 10px;
+            align-items: start;
+        }
+
+        .time-period {
+            color: #3b3a8a;
+            font-size: 12px;
+            font-weight: 600;
+            text-align: center;
+            padding: 5px 10px;
+            background: linear-gradient(135deg, #eef2ff, #ede9fe);
+            border-radius: 5px;
+            border-left: 3px solid #6366f1;
+        }
+
+        .item-content {
+            flex: 1;
+        }
+
+        .item-title {
+            color: #3b3a8a;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 4px;
+            position: relative;
+            padding-left: 10px;
+        }
+
+        .item-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3px;
+            height: 14px;
+            background: #6366f1;
+            border-radius: 2px;
+        }
+
+        .item-subtitle {
+            color: #64748b;
+            font-size: 12px;
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+
+        .item-description {
+            color: #475569;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .responsibility-item {
+            margin-bottom: 8px;
+            padding: 8px;
+            background: linear-gradient(145deg, #f5f3ff, #ede9fe);
+            border-radius: 5px;
+            border-left: 3px solid #6366f1;
+        }
+
+        .responsibility-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .responsibility-title {
+            color: #3b3a8a;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .responsibility-text {
+            color: #475569;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .experience-item {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 10px;
+            align-items: start;
+        }
+
+        .award-level {
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+        }
+
+        .award-level.provincial {
+            background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+            color: #3b3a8a;
+            border: 1px solid #c4b5fd;
+            box-shadow: 0 2px 4px rgba(99, 102, 241, 0.2);
+        }
+
+        .award-level.school {
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+            color: #059669;
+        }
+
+        .award-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 8px;
+            background: linear-gradient(145deg, #ffffff, #f5f3ff);
+            border-radius: 6px;
+            margin-bottom: 6px;
+            border: 1px solid #ddd6fe;
+            transition: all 0.3s ease;
+        }
+
+        .award-item:hover {
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+        }
+
+        .award-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .award-content {
+            flex: 1;
+        }
+
+        .award-name {
+            color: #3b3a8a;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .award-track {
+            color: #64748b;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .self-evaluation {
+            background: linear-gradient(145deg, #f5f3ff, #ede9fe);
+            border-radius: 8px;
+            padding: 12px;
+            color: #475569;
+            font-size: 13px;
+            line-height: 1.6;
+            border-left: 4px solid #6366f1;
+        }
+
+        .course-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .course-tag {
+            text-align: center;
+            padding: 5px 10px;
+            font-size: 10px;
+            background: #f3f4f6;
+            color: #4d4769;
+            border-radius: 5px;
+            font-weight: 500;
+            border: 1px solid #e5e7eb;
+        }
+
+        .course-tag:hover {
+            background: #e5e7eb;
+            color: #1f2937;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-card {
+            background: linear-gradient(145deg, #ffffff, #f5f3ff);
+            border-radius: 8px;
+            padding: 12px;
+            border: 1px solid #ddd6fe;
+            box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.18);
+        }
+
+        .skill-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #2563eb, #6366f1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+            box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+        }
+
+        .skill-icon svg {
+            width: 18px;
+            height: 18px;
+            fill: white;
+        }
+
+        .skill-title {
+            color: #3b3a8a;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .skill-list {
+            color: #64748b;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        [contenteditable="true"] {
+            outline: none;
+            cursor: text;
+            border-bottom: 1px dashed transparent;
+            transition: all 0.2s ease;
+        }
+
+        [contenteditable="true"]:hover {
+            border-bottom-color: #6366f1;
+            background-color: rgba(99, 102, 241, 0.08);
+        }
+
+        [contenteditable="true"]:focus {
+            border-bottom-color: #3b3a8a;
+            background-color: rgba(99, 102, 241, 0.15);
+        }
+
+        .drag-handle {
+            cursor: move;
+            padding: 4px;
+            color: #6366f1;
+            opacity: 0;
+            transition: opacity 0.2s;
+            font-size: 14px;
+        }
+
+        .section:hover .drag-handle {
+            opacity: 1;
+        }
+
+        .section.dragging {
+            opacity: 0.7;
+            background-color: #f5f3ff;
+            transform: rotate(2deg);
+        }
+
+        .drop-zone {
+            border-top: 3px dashed #6366f1;
+            background: rgba(245, 243, 255, 0.92);
+        }
+
+        .divider-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #ddd6fe, transparent);
+            margin: 12px 0;
+        }
+
+        .accent-box {
+            background: linear-gradient(135deg, #2563eb, #6366f1);
+            padding: 12px 18px;
+            border-radius: 8px;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            margin-bottom: 10px;
+            box-shadow: 0 6px 16px rgba(99, 102, 241, 0.3);
+        }
+
+        .accent-box-title {
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .accent-box-desc {
+            font-size: 11px;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <header class="header">
+            <div class="header-left">
+                <h1 class="name" contenteditable="true">张禾妍</h1>
+                <div class="personal-info">
+                    <div class="personal-info-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        <span contenteditable="true">女</span>
+                    </div>
+                    <div class="personal-info-item">
+                        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm3-6c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3z"/></svg>
+                        <span contenteditable="true">2005年3月</span>
+                    </div>
+                    <div class="personal-info-item">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        <span contenteditable="true">18819253969</span>
+                    </div>
+                    <div class="personal-info-item">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <span contenteditable="true">18819253969@139.com</span>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="photo">
+                    <img src="photo.jpg" alt="张禾妍" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </header>
+
+        <section class="section" draggable="true">
+            <h2 class="section-title">
+                <span class="drag-handle">☰</span>
+                <svg viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
+                <span contenteditable="true">求职意向</span>
+            </h2>
+            <div class="card">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div class="accent-box">
+                        <div class="accent-box-title" contenteditable="true">机器人仿真与模型开发部署实习生</div>
+                    </div>
+                    <div class="accent-box">
+                        <div class="accent-box-title" contenteditable="true">FAE现场应用实习生</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" draggable="true">
+            <h2 class="section-title">
+                <span class="drag-handle">☰</span>
+                <svg viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+                <span contenteditable="true">教育背景</span>
+            </h2>
+            <div class="card">
+                <div class="education-item">
+                    <div class="time-period" contenteditable="true">2023.09 - 2027.06</div>
+                    <div class="item-content">
+                        <div class="item-title" contenteditable="true">机械设计及其自动化（智能机器人）</div>
+                        <div class="item-subtitle" contenteditable="true">广东理工学院 · 本科</div>
+                    </div>
+                    <div></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-top: 12px; padding-top: 10px; border-top: 1px dashed #fde68a;">
+                    <div class="course-tag" contenteditable="true" style="flex: 1; margin-right: 8px;">机器人运动控制</div>
+                    <div class="course-tag" contenteditable="true" style="flex: 1; margin-right: 8px;">机器人运动建模与仿真</div>
+                    <div class="course-tag" contenteditable="true" style="flex: 1; margin-right: 8px;">机器学习与深度学习</div>
+                    <div class="course-tag" contenteditable="true" style="flex: 1;">机器人操作系统</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" draggable="true">
+            <h2 class="section-title">
+                <span class="drag-handle">☰</span>
+                <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                <span contenteditable="true">在校职务</span>
+            </h2>
+            <div class="card">
+                <div class="education-item">
+                    <div class="time-period" contenteditable="true">2023.09 - 2027.06</div>
+                    <div class="item-content">
+                        <div class="item-title" contenteditable="true">副班长</div>
+                        <div class="item-description" contenteditable="true">协助班长完成处理班级事务</div>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="education-item">
+                    <div class="time-period" contenteditable="true">2024.09 - 2025.06</div>
+                    <div class="item-content">
+                        <div class="item-title" contenteditable="true">学习部部长  [大学生科创中心] </div>
+                        <div class="item-description" contenteditable="true">指导新生进行学科竞赛的学习并组织训练</div>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="education-item">
+                    <div class="time-period" contenteditable="true">2024.09 - 2026.06</div>
+                    <div class="item-content">
+                        <div class="item-title" contenteditable="true">组织部部长、副负责人  [智优培工作室] </div>
+                        <div class="item-description" contenteditable="true">策划、组织并协调工作室展开各项活动、协助完成机器人展会中的机器人展示</div>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" draggable="true">
+            <h2 class="section-title">
+                <span class="drag-handle">☰</span>
+                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0l-7 7h5v5l7-7h-5V3z"/></svg>
+                <span contenteditable="true">实习经历</span>
+            </h2>
+            <div class="card">
+                <div class="experience-item">
+                    <div class="time-period" contenteditable="true">2024.01 - 2024.02</div>
+                    <div class="item-content">
+                        <div class="item-title" contenteditable="true">科创课程助教（兼职）</div>
+                        <div class="item-subtitle" contenteditable="true">广州无邪流动科技有限公司</div>
+                        <div class="item-description" contenteditable="true">负责协助教师完成科学实验、机器人制作等教学任务</div>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="experience-item">
+                    <div class="time-period" contenteditable="true">2025.09 - 2026.02</div>
+                    <div class="item-content">
+                        <div class="item-title" contenteditable="true">图形化编程教师（兼职）</div>
+                        <div class="item-subtitle" contenteditable="true">肇庆多维编程信息技术有限公司</div>
+                        <div class="item-description" contenteditable="true">担任7-12岁儿童的图形化编程教学任务</div>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" draggable="true">
+            <h2 class="section-title">
+                <span class="drag-handle">☰</span>
+                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <span contenteditable="true">获奖经历</span>
+            </h2>
+            <div class="award-item">
+                <span class="award-level provincial" contenteditable="true">省级 一等奖</span>
+                <div class="award-content">
+                    <a href="certificates/citycar.pdf" target="_blank" class="award-link" title="点击查看奖状">
+                        <div class="award-name" contenteditable="false">第二十六届中国机器人及人工智能大赛</div>
+                    </a>
+                    <div class="award-track" contenteditable="true">城市道路识别赛道 · 负责智能小车巡线部分</div>
+                </div>
+            </div>
+            <div class="award-item">
+                <span class="award-level provincial" contenteditable="true">省级 二等奖</span>
+                <div class="award-content">
+                    <a href="certificates/web.jpg"target="_blank" class="award-link" title="点击查看奖状">
+                        <div class="award-name" contenteditable="false">"传智杯"全国计算机应用大赛</div>
+                    </a>
+                    <div class="award-track" contenteditable="true">Web网页开发赛道 · 负责网页UI设计及制作</div>
+                </div>
+            </div>
+            <div class="award-item">
+                <span class="award-level provincial" contenteditable="true">省级 三等奖</span>
+                <div class="award-content">
+                    <a href="certificates/roscar.pdf" target="_blank" class="award-link" title="点击查看奖状">
+                        <div class="award-name" contenteditable="false">第十九届全国大学生智能汽车竞赛</div>
+                    </a>
+                    <div class="award-track" contenteditable="true">室外ROS无人车赛道 · 负责智能小车巡线部分</div>
+                </div>
+            </div>
+            <div class="award-item">
+                <span class="award-level provincial" contenteditable="true">省级 三等奖</span>
+                <div class="award-content">
+                    <a href="certificates/huichuan.jpg" target="_blank" class="award-link" title="点击查看奖状">
+                        <div class="award-name" contenteditable="false">"汇川杯"</div>
+                    </a>
+                    <div class="award-track" contenteditable="true">AI视觉检测赛道 · 负责知识考核以及视觉程序编写</div>
+                </div>
+            </div>
+            <div class="award-item">
+                <span class="award-level provincial" contenteditable="true">省级 三等奖</span>
+                <div class="award-content">
+                    <a href="certificates/ruikang.jpg" target="_blank" class="award-link" title="点击查看奖状">
+                        <div class="award-name" contenteditable="false">"睿抗"机器人开发者大赛</div>
+                    </a>
+                    <div class="award-track" contenteditable="true">数字孪生研创赛道 · 负责作品说明书编写以及SolidWorks建模</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" draggable="true">
+            <h2 class="section-title">
+                <span class="drag-handle">☰</span>
+                <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg>
+                <span contenteditable="true">专业技能</span>
+            </h2>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+                    </div>
+                    <div class="skill-title" contenteditable="true">编程语言</div>
+                    <div class="skill-list">
+                        <span contenteditable="true">• Python / C / C++</span><br>
+                        <span contenteditable="true">• 嵌入式开发</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    </div>
+                    <div class="skill-title" contenteditable="true">机器人框架</div>
+                    <div class="skill-list">
+                        <span contenteditable="true">• ROS / ROS2 开发</span><br>
+                        <span contenteditable="true">• 数字孪生</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24"><path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></svg>
+                    </div>
+                    <div class="skill-title" contenteditable="true">开发环境</div>
+                    <div class="skill-list">
+                        <span contenteditable="true">• Linux</span><br>
+                    
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    </div>
+                    <div class="skill-title" contenteditable="true">AI/视觉检测</div>
+                    <div class="skill-list">
+                        <span contenteditable="true">• PyTorch 框架</span><br>
+                        <span contenteditable="true">• 深度学习</span><br>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" draggable="true">
+            <h2 class="section-title">
+                <span class="drag-handle">☰</span>
+                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <span contenteditable="true">能力证书</span>
+            </h2>
+            <div class="card">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div class="skill-icon" style="width: 32px; height: 32px;">
+                        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                    </div>
+                    <div>
+                        <div class="item-title" contenteditable="true">全国大学生英语四级考试合格证书</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" draggable="true">
+            <h2 class="section-title">
+                <span class="drag-handle">☰</span>
+                <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/></svg>
+                <span contenteditable="true">项目经历</span>
+            </h2>
+            <div class="card">
+                <div class="education-item">
+                    <div class="time-period" contenteditable="true">负责人</div>
+                    <div class="item-content">
+                        <div class="item-title">
+                            <a href="starsound/project-details.html" style="color: #3b3a8a; text-decoration: none; border-bottom: 1px dashed #6366f1; padding-bottom: 2px;">
+                                "声语星河"手势转语音智能辅助交流系统
+                            </a>
+                        </div>
+                        <div class="item-subtitle" contenteditable="true">负责协调团队工作、完成基于嵌入式的智能辅助交流系统开发</div>
+                        <div style="margin-top: 6px; font-size: 11px; color: #6366f1;">
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="education-item">
+                    <div class="time-period" contenteditable="true">成员</div>
+                    <div class="item-content">
+                        <div class="item-title" contenteditable="true">"潜心寻溢"气体泄漏巡检与泄漏源定位系统</div>
+                        <div class="item-subtitle" contenteditable="true">负责攥写商业计划书，参与各项创新创业大赛的路演以及答辩</div>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="education-item">
+                    <div class="time-period" contenteditable="true">软著</div>
+                    <div class="item-content">
+                        <div class="item-title" contenteditable="true">可穿戴式手势-语音双向转换交互系统</div>
+                        <div class="item-subtitle" contenteditable="true">参与软件著作权的攥写以及开发</div>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" draggable="true">
+            <h2 class="section-title">
+                <span class="drag-handle">☰</span>
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span contenteditable="true">自我评价</span>
+            </h2>
+            <div class="self-evaluation" contenteditable="true">
+                本人热爱机器人技术，熟悉机器人系统，了解机器人结构、控制以及操作等基础知识。可以利用python等工具与硬件结合，独立完成项目搭建。具备良好的编程能力和团队协作精神，能够快速学习新技术并应用于实际项目。在校期间积极参与各类学科竞赛，获得了多项省级奖项，具备较强的动手能力和问题解决能力。
+            </div>
+        </section>
+        <section class="section" draggable="true">
+            <h2 class="section-title">
+                <span class="drag-handle">☰</span>
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span contenteditable="true">GitHub仓库</span>
+            </h2>
+            <div class="card">
+                <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;">
+                    <a href="https://github.com/Tanya-lam/Chang-Tanya-presonal-information.git" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; background: linear-gradient(135deg, #2563eb, #6366f1); color: white; text-decoration: none; border-radius: 8px; transition: all 0.2s; box-shadow: 0 2px 6px rgba(99, 102, 241, 0.2);">
+                        <svg viewBox="0 0 24 24" style="width: 18px; height: 16px; fill: white;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                        <span contenteditable="true">Chang-Tanya-presonal-information</span>
+                    </a>
+                    <a href="https://github.com/Tanya-lam" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; text-decoration: none; border-radius: 8px; transition: all 0.2s; box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);">
+                        <svg viewBox="0 0 24 24" style="width: 18px; height: 16px; fill: white;"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                        <span contenteditable="true">Tanya-lam 的 GitHub 主页</span>
+                    </a>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <a href="https://github.com/Tanya-lam/Chang-Tanya-presonal-information.git" target="_blank" style="color: #2563eb; text-decoration: none; word-break: break-all; font-size: 14px;">
+                        🔗 https://github.com/Tanya-lam/Chang-Tanya-presonal-information.git
+                    </a>
+                    <a href="https://github.com/Tanya-lam" target="_blank" style="color: #2563eb; text-decoration: none; word-break: break-all; font-size: 14px;">
+                        🔗 https://github.com/Tanya-lam
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        let draggedElement = null;
+
+        document.addEventListener('dragstart', function(e) {
+            if (e.target.closest('.section')) {
+                draggedElement = e.target.closest('.section');
+                draggedElement.classList.add('dragging');
+                e.dataTransfer.effectAllowed = 'move';
+            }
+        });
+
+        document.addEventListener('dragend', function(e) {
+            if (draggedElement) {
+                draggedElement.classList.remove('dragging');
+                document.querySelectorAll('.section').forEach(section => {
+                    section.classList.remove('drop-zone');
+                });
+                draggedElement = null;
+            }
+        });
+
+        document.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            if (draggedElement) {
+                const sections = document.querySelectorAll('.section');
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    const centerY = rect.top + rect.height / 2;
+                    if (e.clientY < centerY) {
+                        section.classList.add('drop-zone');
+                    } else {
+                        section.classList.remove('drop-zone');
+                    }
+                });
+            }
+        });
+
+        document.addEventListener('drop', function(e) {
+            e.preventDefault();
+            if (draggedElement) {
+                const dropTarget = e.target.closest('.section');
+                if (dropTarget && dropTarget !== draggedElement) {
+                    const container = draggedElement.parentElement;
+                    const rect = dropTarget.getBoundingClientRect();
+                    const centerY = rect.top + rect.height / 2;
+
+                    if (e.clientY < centerY) {
+                        container.insertBefore(draggedElement, dropTarget);
+                    } else {
+                        container.insertBefore(draggedElement, dropTarget.nextSibling);
+                    }
+                }
+                document.querySelectorAll('.section').forEach(section => {
+                    section.classList.remove('drop-zone');
+                });
+                draggedElement.classList.remove('dragging');
+                draggedElement = null;
+            }
+        });
+    </script>
+</body>
+</html>

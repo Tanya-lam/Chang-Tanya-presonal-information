@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>声语星河 - 项目详情</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", sans-serif;
+            background: linear-gradient(135deg, #f0f5ff 0%, #ede9fe 50%, #d8d2fe 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.15);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2563eb 0%, #6366f1 50%, #8b5cf6 100%);
+            color: white;
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            transition: all 0.2s;
+        }
+
+        .back-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .back-link svg {
+            width: 14px;
+            height: 14px;
+            fill: white;
+        }
+
+        .content {
+            padding: 25px 30px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #3b3a8a;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #6366f1;
+        }
+
+        .section-title svg {
+            width: 18px;
+            height: 18px;
+            fill: #6366f1;
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #ddd6fe;
+            box-shadow: 0 4px 16px rgba(99, 102, 241, 0.12);
+        }
+
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+
+        .pdf-container {
+            width: 100%;
+            height: 500px;
+            border-radius: 10px;
+            border: 1px solid #ddd6fe;
+            box-shadow: 0 4px 16px rgba(99, 102, 241, 0.12);
+            overflow: hidden;
+        }
+
+        .pdf-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .description {
+            color: #475569;
+            font-size: 14px;
+            line-height: 1.7;
+            background: linear-gradient(145deg, #f5f3ff, #ede9fe);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #6366f1;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+            color: #475569;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .feature-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-list li::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #6366f1;
+            border-radius: 50%;
+            margin-top: 6px;
+            flex-shrink: 0;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-tag {
+            padding: 5px 12px;
+            background: linear-gradient(135deg, #eef2ff, #ede9fe);
+            color: #3b3a8a;
+            font-size: 12px;
+            border-radius: 20px;
+            border: 1px solid #ddd6fe;
+        }
+
+        .download-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .download-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #2563eb, #6366f1);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .download-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(99, 102, 241, 0.4);
+        }
+
+        .download-link svg {
+            width: 16px;
+            height: 16px;
+            fill: white;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .back-link, .download-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>"声语星河"手势转语音智能辅助交流系统</h1>
+            <a href="../resume-beautiful.html" class="back-link">
+                <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+                返回简历
+            </a>
+        </header>
+
+        <div class="content">
+            <section class="section">
+                <h2 class="section-title">
+                    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </h2>
+                <div class="video-container">
+                    <video controls>
+                        <source src="video.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                    
+                </h2>
+                <div class="pdf-container">
+                    <iframe src="可穿戴式手势-语音双向转换交互系统.pdf" title="项目演示ppt">
+                        <p>您的浏览器不支持PDF预览，请<a href="project-document.pdf" target="_blank">点击下载</a>查看。</p>
+                    </iframe>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                    项目简介
+                </h2>
+                <div class="description">
+                    "声语星河"手势转语音智能辅助交流系统是一款基于嵌入式技术的智能辅助设备，旨在帮助聋哑人士实现手势到语音的实时转换，打破沟通障碍。系统采用先进的机器学习算法识别手势动作，并通过语音合成技术将手势转换为自然语言输出。
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">
+                    <svg viewBox="0 0 24 24"><path d="M12 2l-5.5 9h11L12 2zm0 21.86l6.92-6.92c.3-.3.46-.7.46-1.14 0-.44-.16-.84-.46-1.14l-6.92-6.92-6.92 6.92c-.3.3-.46.7-.46 1.14 0 .44.16.84.46 1.14l6.92 6.92zM12 6.86l4.95 4.95-4.95 4.95-4.95-4.95L12 6.86z"/></svg>
+                    核心功能
+                </h2>
+                <ul class="feature-list">
+                    <li>实时手势识别，支持多种常用手势动作</li>
+                    <li>高精度语音合成，自然流畅的语音输出</li>
+                    <li>嵌入式硬件设计，便携轻便</li>
+                    <li>支持自定义手势训练与扩展</li>
+                    <li>低功耗设计，超长续航</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                    技术栈
+                </h2>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">C/C++</span>
+                    <span class="tech-tag">TensorFlow Lite</span>
+                    <span class="tech-tag">STM32</span>
+                    <span class="tech-tag">ROS</span>
+                    <span class="tech-tag">语音合成</span>
+                    <span class="tech-tag">机器学习</span>
+                    <span class="tech-tag">嵌入式开发</span>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">
+                    <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                    下载资源
+                </h2>
+                <div class="download-links">
+                    <a href="project-document.pdf" target="_blank" class="download-link">
+                        <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                        项目文档
+                    </a>
+                    <a href="video.mp4" download class="download-link">
+                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        演示视频
+                    </a>
+                    <a href="#" class="download-link">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        GitHub源码
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
